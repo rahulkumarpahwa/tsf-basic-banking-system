@@ -1,0 +1,51 @@
+{
+  "data": [
+    {
+      "username": "Rahul Kumar",
+      "email": "rahul@gmail.com",
+      "currentBalance": 23450
+    },
+    {
+      "username": "John Smith",
+      "email": "john@gmail.com",
+      "currentBalance": 29995
+    },
+    {
+      "username": "Dane Joe",
+      "email": "dane@gmail.com",
+      "currentBalance": 123455
+    },
+    {
+      "username": "Mohak Mangal",
+      "email": "mohak@gmail.com",
+      "currentBalance": 2223455
+    },
+    {
+      "username": "Dupic Swift",
+      "email": "dupic@gmail.com",
+      "currentBalance": 2344555
+    },
+    {
+      "username": "Kurel Nayak",
+      "email": "kurel@gmail.com",
+      "currentBalance": 288455
+    },
+    {
+      "username": "Neha Jane",
+      "email": "neha@gmail.com",
+      "currentBalance": 2341155
+    },{
+      "username": "Rabish Kumar",
+      "email": "rabish@gmail.com",
+      "currentBalance": 2345567
+    },{
+      "username": "Jenny Wick",
+      "email": "jenny@gmail.com",
+      "currentBalance": 2929455
+    },{
+      "username": "Marco Junior",
+      "email": "marco@gmail.com",
+      "currentBalance": 23432255
+    }
+  ]
+}
