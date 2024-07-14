@@ -54,6 +54,14 @@ const Footer = () => {
                 View Customers
               </a>
             </li>
+            <li>
+              <a
+                href="#"
+                className="hover:text-white transition-colors duration-300 text-black"
+              >
+                Transactions
+              </a>
+            </li>
           </ul>
         </div>
         <div>
