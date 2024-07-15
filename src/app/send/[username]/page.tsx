@@ -3,8 +3,10 @@ import { useState } from "react";
 import useGetCustomers from "@/utils/useGetCustomers";
 import toast, { Toaster } from "react-hot-toast";
 import axios from "axios";
+import { useRouter } from "next/navigation";
 
 const Page = ({ params }: any) => {
+  const router = useRouter();
   const customers = useGetCustomers();
   const [data, setData] = useState({
     sender: params.username,
@@ -16,6 +18,9 @@ const Page = ({ params }: any) => {
     try {
       const response = await axios.post("/api/transaction", data);
       console.log(response.data);
+      if (response.data.success) {
+        router.push("/customers");
+      }
     } catch (error: any) {
       console.log(error.message);
       toast.error(error.message);
@@ -76,8 +81,8 @@ const Page = ({ params }: any) => {
         className="px-4 py-2 bg-[#2d9be0] hover:bg-[#0e5d8f] text-white text-xl font-medium rounded-md text-center w-[10rem]"
         onClick={() => {
           console.log(data);
-          onSend();
           toast.success(`₹${data.transferAmount} Send to ${data.receiver}`);
+          onSend();
         }}
       >
         Send
