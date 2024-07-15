@@ -1,6 +1,8 @@
 "use client";
 import { useState } from "react";
 import useGetCustomers from "@/utils/useGetCustomers";
+import toast, { Toaster } from "react-hot-toast";
+import axios from "axios";
 
 const Page = ({ params }: any) => {
   const customers = useGetCustomers();
@@ -9,6 +11,16 @@ const Page = ({ params }: any) => {
     receiver: "",
     transferAmount: "",
   });
+
+  const onSend = async () => {
+    try {
+      const response = await axios.post("/api/transaction", data);
+      console.log(response.data);
+    } catch (error: any) {
+      console.log(error.message);
+      toast.error(error.message);
+    }
+  };
 
   return (
     <div className="h-[30rem] bg-[#3c7091] flex items-center flex-col gap-5 justify-center">
@@ -50,7 +62,7 @@ const Page = ({ params }: any) => {
           </select>
           <input
             className="focus:outline-none text-black rounded-md my-2 px-2 py-1"
-            placeholder="Say ₹10,000.00"
+            placeholder="Say Send ₹10,000.00"
             id="amount"
             type="number"
             value={data.transferAmount}
@@ -64,10 +76,13 @@ const Page = ({ params }: any) => {
         className="px-4 py-2 bg-[#2d9be0] hover:bg-[#0e5d8f] text-white text-xl font-medium rounded-md text-center w-[10rem]"
         onClick={() => {
           console.log(data);
+          onSend();
+          toast.success(`₹${data.transferAmount} Send to ${data.receiver}`);
         }}
       >
         Send
       </button>
+      <Toaster />
     </div>
   );
 };

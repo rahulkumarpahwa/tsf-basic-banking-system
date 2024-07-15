@@ -3,10 +3,16 @@ import User from "./userModel";
 
 const transactionSchema = new mongoose.Schema({
   sender: {
+    type: String,
+  },
+  receiver: {
+    type: String,
+  },
+  senderId: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "User",
   },
-  receiver: {
+  receiverId: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "User",
   },
@@ -17,6 +23,7 @@ const transactionSchema = new mongoose.Schema({
 });
 
 const Transaction =
-  mongoose.models["Transaction"] || mongoose.model("transactions", transactionSchema);
+  mongoose.models.transactions ||
+  mongoose.model("transactions", transactionSchema);
 
 export default Transaction;
