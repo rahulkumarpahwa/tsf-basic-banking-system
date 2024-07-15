@@ -37,7 +37,7 @@ const About = () => {
                 className="h-60 w-full object-cover rounded-tl-lg rounded-tr-lg"
                 alt={data?.name}
               />
-              <div className="p-2">
+              <p className="p-2">
                 <h2 className="text-xl text-center text-bold ">{data.name}</h2>
                 <p className="text-white hover:text-black">{data.bio}</p>
                 <div className="text-white hover:text-black">
@@ -49,7 +49,7 @@ const About = () => {
                     @rahulkumarpahwa
                   </Link>
                 </div>
-              </div>
+              </p>
             </Link>
           </div>
         </div>
