@@ -59,11 +59,13 @@ const Page = ({ params }: any) => {
           >
             <option>Choose any Customer</option>
             {customers.length != 0 &&
-              customers.map((customer) => (
-                <option key={customer._id} value={customer.username}>
-                  {customer.username} - {customer.email}{" "}
-                </option>
-              ))}
+              customers
+                .filter((customer) => customer.username != data.sender)
+                .map((customer) => (
+                  <option key={customer._id} value={customer.username}>
+                    {customer.username} - {customer.email}{" "}
+                  </option>
+                ))}
           </select>
           <input
             className="focus:outline-none text-black rounded-md my-2 px-2 py-1"

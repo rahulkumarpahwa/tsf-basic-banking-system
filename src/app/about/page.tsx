@@ -17,14 +17,19 @@ const About = () => {
   }, []);
 
   const fetchData = async () => {
-    const data = await fetch("https://api.github.com/users/rahulkumarpahwa");
-    const json = await data.json();
-    // console.log(json);
-    setData(json);
+    try {
+      const data = await fetch("https://api.github.com/users/rahulkumarpahwa");
+      const json = await data.json();
+      // console.log(json);
+      setData(json);
+    } catch (error: any) {
+      console.log(error.message);
+
+    }
   };
 
   return data != undefined ? (
-    <div className="bg-[#3c7091] py-20  h-[40rem]">
+    <div className="bg-[#3c7091] py-20  h-[45rem]">
       <div className="flex items-center justify-center gap-10">
         <div>
           <h3 className="text-center my-4 text-bold text-sans">Build By :</h3>
@@ -37,7 +42,7 @@ const About = () => {
                 className="h-60 w-full object-cover rounded-tl-lg rounded-tr-lg"
                 alt={data?.name}
               />
-              <p className="p-2">
+              <div className="p-2">
                 <h2 className="text-xl text-center text-bold ">{data.name}</h2>
                 <p className="text-white hover:text-black">{data.bio}</p>
                 <div className="text-white hover:text-black">
@@ -49,7 +54,7 @@ const About = () => {
                     @rahulkumarpahwa
                   </Link>
                 </div>
-              </p>
+              </div>
             </Link>
           </div>
         </div>
@@ -63,10 +68,10 @@ const About = () => {
             <ul className="ml-4 my-2 space-y-1 list-disc">
               <li>
                 {" "}
-                <Link href="/login">LogIn</Link>
+                <Link href="/customers">View Customers</Link>
               </li>
               <li>
-                <Link href="/signup">SignUp</Link>
+                <Link href="/transactions">Transactions</Link>
               </li>
               <li>
                 <Link href="/About">About</Link>
@@ -75,9 +80,9 @@ const About = () => {
           </p>
           <h2 className="text-bold text-3xl">Features :</h2>
           <ul className="ml-4 space-y-1 list-disc">
-            <li> User can SignUp or LogIn.</li>
-            <li>After SignUp, user will get an email to verify.</li>
-            <li>After Verification, user will LogIn and then see its info.</li>
+            <li>You can view all the customers.</li>
+            <li>You can send money to the another customer.</li>
+            <li>You can see all the transactions of amount.</li>
           </ul>
 
           <p className="text-bold text-3xl">TechStack : </p>
@@ -86,6 +91,9 @@ const About = () => {
             <li>TailwindCSS</li>
             <li>TypeScript</li>
             <li>JSX</li>
+            <li>React Hot Toast</li>
+            <li>Axios</li>
+            <li>Mongoose</li>
           </ul>
         </div>
       </div>
