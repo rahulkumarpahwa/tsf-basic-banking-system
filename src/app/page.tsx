@@ -24,10 +24,19 @@ export default function Home() {
             <FaArrowRight />{" "}
           </Link>
         </h2>
-        <h2 className="flex gap-1 text-2xl my-1 items-center justify-center">
+        <h2 className="flex gap-1 text-2xl my-2 items-center justify-center">
           To view All Transactions{" "}
           <Link
             href={"/transactions"}
+            className="flex items-center justify-center gap-2 hover:translate-x-1.5 transition-transform motion-reduce:transform-none"
+          >
+            <FaArrowRight />{" "}
+          </Link>
+        </h2>
+        <h2 className="flex gap-1 text-xl my-2 items-center justify-center">
+          About this App{" "}
+          <Link
+            href={"/about"}
             className="flex items-center justify-center gap-2 hover:translate-x-1.5 transition-transform motion-reduce:transform-none"
           >
             <FaArrowRight />{" "}
